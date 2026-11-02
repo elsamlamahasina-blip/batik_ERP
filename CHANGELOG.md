@@ -29,3 +29,4 @@ Format penulisan mengacu pada [Keep a Changelog](https://keepachangelog.com/id/1
   - `docs/pekan-01/vmodel.md`: Pemetaan V-Model (ISO/IEC/IEEE 29119) dan analisis Verifikasi vs Validasi.
   - `docs/pekan-01/defects.md`: Log pencatatan dan resolusi cacat Pekan 1.
   - `docs/pekan-01/README.md`: Panduan eksekusi dan pelaporan hasil uji Pekan 1.
+

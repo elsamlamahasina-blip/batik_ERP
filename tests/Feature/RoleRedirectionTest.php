@@ -84,3 +84,4 @@ test('cross role access is blocked with 403 forbidden', function () {
     // Gudang tries to access Kasir dashboard -> 403
     $this->actingAs($gudang)->get(route('dashboard.kasir'))->assertStatus(403);
 });
+

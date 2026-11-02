@@ -121,3 +121,4 @@ Pada Pekan 1, fondasi arsitektur telah disiapkan sesuai prinsip V-Model:
 1. **Dasar Otentikasi dan Autorisasi Berbasis Peran:** Struktur 7 role telah dipetakan untuk menjamin kepatuhan hak akses sejak tingkat paling awal.
 2. **Kesiapan Pengujian Terotomatisasi:** Framework pengujian Pest telah dipersiapkan agar setiap penambahan baris kode pada pekan berikutnya selalu disertai tes otomatis (*test-first mindset*).
 3. **Pemisahan Lingkungan Melalui Kontainer:** Docker Compose menjamin pengujian dijalankan pada lingkungan yang identik (*reproducible environment*) antara mesin lokal pengembang dan server produksi kelak.
+

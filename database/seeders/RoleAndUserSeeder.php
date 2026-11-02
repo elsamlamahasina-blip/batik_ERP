@@ -34,6 +34,12 @@ class RoleAndUserSeeder extends Seeder
 
         $users = [
             [
+                'name' => 'Admin SiBatik (Gmail)',
+                'email' => 'admin@gmail.com',
+                'password' => Hash::make('password'),
+                'role' => 'admin',
+            ],
+            [
                 'name' => 'Admin SiBatik',
                 'email' => 'admin@sibatik.lan',
                 'password' => Hash::make('password'),
@@ -92,3 +98,4 @@ class RoleAndUserSeeder extends Seeder
         }
     }
 }
+

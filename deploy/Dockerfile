@@ -29,3 +29,4 @@ RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache \
 EXPOSE 9000
 
 CMD ["php-fpm"]
+

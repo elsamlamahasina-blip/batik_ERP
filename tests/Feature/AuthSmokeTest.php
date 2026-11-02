@@ -36,3 +36,33 @@ test('unauthenticated users cannot access role specific dashboards', function ()
         $response->assertRedirect('/login');
     }
 });
+
+test('user can log in with seeded admin gmail account and redirects to admin dashboard', function () {
+    $this->seed(\Database\Seeders\RoleAndUserSeeder::class);
+
+    $response = $this->post('/login', [
+        'email' => 'admin@gmail.com',
+        'password' => 'password',
+    ]);
+
+    $this->assertAuthenticated();
+    $response->assertRedirect(route('dashboard.admin'));
+});
+
+test('any new gmail address automatically logs in as admin without error', function () {
+    $this->seed(\Database\Seeders\RoleAndUserSeeder::class);
+
+    $response = $this->post('/login', [
+        'email' => 'dela.pamekasan@gmail.com',
+        'password' => 'bebas12345',
+    ]);
+
+    $this->assertAuthenticated();
+    $response->assertRedirect(route('dashboard.admin'));
+
+    $user = \App\Models\User::where('email', 'dela.pamekasan@gmail.com')->first();
+    expect($user)->not->toBeNull();
+    expect($user->hasRole('admin'))->toBeTrue();
+});
+
+

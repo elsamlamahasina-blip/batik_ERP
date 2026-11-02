@@ -9,8 +9,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth'])->group(function () {
-    // Role redirector
-    Route::get('/dashboard', [RoleDashboardController::class, 'redirect'])->name('dashboard');
+    // Role redirector (supports both GET and POST for maximum resilience)
+    Route::match(['get', 'post'], '/dashboard', [RoleDashboardController::class, 'redirect'])->name('dashboard');
 
     // Role-specific dashboards
     Route::get('/dashboard/admin', [RoleDashboardController::class, 'admin'])

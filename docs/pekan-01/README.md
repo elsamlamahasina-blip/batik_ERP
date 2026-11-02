@@ -165,3 +165,4 @@ Sesuai aturan *Software Quality Assurance*, seluruh temuan bug dicatat secara tr
    - Matriks Ketertelusuran Mutu (Traceability Matrix).
 4. **[`docs/pekan-01/defects.md`](./defects.md):** Defect log terstruktur ISO/IEC/IEEE 29119-3.
 5. **[`CHANGELOG.md`](../../CHANGELOG.md):** Riwayat perubahan rilis versi `v0.01`.
+

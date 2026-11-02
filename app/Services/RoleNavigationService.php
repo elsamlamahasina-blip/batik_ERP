@@ -45,3 +45,4 @@ class RoleNavigationService
         return array_keys($this->roleRoutes);
     }
 }
+

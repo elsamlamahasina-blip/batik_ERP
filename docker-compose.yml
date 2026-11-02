@@ -64,3 +64,4 @@ networks:
 volumes:
   sibatik_postgres_data:
     driver: local
+

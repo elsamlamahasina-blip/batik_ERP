@@ -9,3 +9,4 @@
 - Jangan hardcode secret; gunakan `.env` dan sediakan `.env.example`.
 - Setiap akhir pekan: perbarui `CHANGELOG.md` dan `docs/pekan-XX/README.md` berisi: apa yang dibangun, cara menjalankan, cara menguji, hasil test, bug yang diketahui, dan artefak RPS pekan itu.
 - Jangan menyembunyikan bug demi test hijau. Bug yang ditemukan dicatat di `docs/pekan-XX/defects.md` (dan GitHub Issues bila tersedia).
+

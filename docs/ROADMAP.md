@@ -134,3 +134,4 @@ Format tiap pekan: **Bangun** (fitur), **Uji** (pengujian yang wajib dibuat dan 
 - **Bangun**: rilis `v1.0`, bekukan kode.
 - **Uji**: jalankan seluruh suite sekali lagi; **simulasi rollback langsung** ke versi sebelumnya dan verifikasi data.
 - **Artefak (RPS)**: **Laporan akhir PIR + skrip demo rollback**, bahan presentasi.
+
