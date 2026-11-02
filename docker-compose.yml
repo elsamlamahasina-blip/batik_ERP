@@ -1,0 +1,66 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    container_name: sibatik_app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - sibatik_net
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_CONNECTION=pgsql
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=sibatik_erp
+      - DB_USERNAME=sibatik
+      - DB_PASSWORD=sibatik_secret
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:alpine
+    container_name: sibatik_nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./deploy/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - sibatik_net
+    depends_on:
+      - app
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: sibatik_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: sibatik_erp
+      POSTGRES_USER: sibatik
+      POSTGRES_PASSWORD: sibatik_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - sibatik_postgres_data:/var/lib/postgresql/data
+    networks:
+      - sibatik_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sibatik -d sibatik_erp"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+networks:
+  sibatik_net:
+    driver: bridge
+
+volumes:
+  sibatik_postgres_data:
+    driver: local

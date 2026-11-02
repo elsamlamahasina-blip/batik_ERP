@@ -1,0 +1,7 @@
+.git
+.github
+/tools
+/node_modules
+/storage/*.key
+.env
+.phpunit.result.cache
